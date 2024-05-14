@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
 import "./App.css";
-import cheerio from "cheerio";
 import God from "./services/Gods";
 import GodRow from "./components/GodRow";
 import GodSearch from "./components/GodSearch";
 import getGodsList from "./services/getGodsList";
-import { getRandomIndex, getRandomIndexDay } from "./services/getRandomGod";
+import { getRandomIndex } from "./services/getRandomGod";
 import getAchievment from "./services/getAchievment";
 
 function App() {

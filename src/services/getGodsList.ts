@@ -10,7 +10,7 @@ const getGodsList = (text: string): Array<God> => {
     // Iterate through each row of the table
     const tableRows = specificTable.find("tr").slice(1); // Exclude header row
     const godList = tableRows
-      .map((i, row) => {
+      .map((_, row) => {
         const columns = html(row).find("td");
 
         // Extracting data from columns
