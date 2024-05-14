@@ -1,0 +1,41 @@
+.guess-row{
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.guess-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+  height: 128px;
+  border: 5px solid #000000;
+  border-radius: 10%;
+}
+.guess-image{
+    z-index: -1;
+    position: absolute;
+}
+.guess-text{
+    position: absolute;
+    font-size: x-large;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000000;
+    font-weight: bold;
+    
+    width: 128px;
+    text-wrap:balance;
+    position: relative;
+}
+.guess-correct{
+    background-color:#00ff00;
+}
+.guess-incorrect{
+    background-color:#ff0000;
+}

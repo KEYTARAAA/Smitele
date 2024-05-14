@@ -1,0 +1,45 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+body {
+  margin:0;
+  padding:0;
+}
+
+.container{
+  margin: 0;
+    padding: 0;
+}
+
+.guesses{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+.game-container{
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  align-items: center;
+  justify-content: center;
+}
+.achievment-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content:s center;
+}
+.achievment-text{
+  text-align: center;
+  font-size:larger;
+  font-weight: bolder;
+}
+.achievment-image{
+  height: 192;
+  width: 192;
+}
