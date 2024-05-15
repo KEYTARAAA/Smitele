@@ -4,7 +4,7 @@ import God from "./services/Gods";
 import GodRow from "./components/GodRow";
 import GodSearch from "./components/GodSearch";
 import getGodsList from "./services/getGodsList";
-import { getRandomIndex } from "./services/getRandomGod";
+import { getRandomIndexDay } from "./services/getRandomGod";
 import getAchievment from "./services/getAchievment";
 
 function App() {
@@ -22,7 +22,7 @@ function App() {
       .then((res) => {
         const godList = getGodsList(res);
         setGods(godList);
-        setGodIndex(getRandomIndex(godList));
+        setGodIndex(getRandomIndexDay(godList));
       });
   };
 
