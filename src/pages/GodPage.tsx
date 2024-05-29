@@ -26,9 +26,13 @@ function GodPage({ gods }: Props) {
         <div className="achievmentContainer">
           <img
             className="achievment-image"
-            src={`/images/achievments/${getAchievment(guesses.length)}.png`}
+            src={`/images/achievments/${getAchievment(
+              complete ? guesses.length - 1 : guesses.length
+            )}.png`}
           />
-          <p className="achievment-text">{getAchievment(guesses.length)}</p>
+          <p className="achievment-text">
+            {getAchievment(complete ? guesses.length - 1 : guesses.length)}
+          </p>
         </div>
         <div className="game-container">
           <GodSearch gods={gods} guess={guess} complete={complete} />

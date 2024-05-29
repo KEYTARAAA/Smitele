@@ -60,7 +60,7 @@ function AbilityPage({ gods }: Props) {
             )}.png`}
           />
           <p className="achievment-text">
-            {getAchievment(complete ? guess.length - 1 : guesses.length)}
+            {getAchievment(complete ? guesses.length - 1 : guesses.length)}
           </p>
         </div>
         <div className="game-container">
