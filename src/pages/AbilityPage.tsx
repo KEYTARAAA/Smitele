@@ -7,6 +7,7 @@ import Ability from "../services/Ability";
 import { getRandomGodIndexDay } from "../services/getRandomGod";
 import GodSearch from "../components/GodSearch";
 import getAchievment from "../services/getAchievment";
+import Confetti from "../components/Confetti";
 
 interface Props {
   gods: Array<God>;
@@ -65,8 +66,8 @@ function AbilityPage({ gods }: Props) {
         <div className="game-container">
           <GodSearch gods={gods} guess={guess} complete={complete} />
           <div className="ability-guess-container">
-            {guesses.map((guess: God) => (
-              <div className="ability-box" key={guess.name}>
+            {guesses.map((guess: God, index: number) => (
+              <div className="ability-box" key={index}>
                 <img
                   src={`/images/gods/${guess.name}.png`}
                   className="ability-image"
@@ -76,6 +77,7 @@ function AbilityPage({ gods }: Props) {
           </div>
         </div>
       </div>
+      <Confetti show={complete} />
     </>
   );
 }

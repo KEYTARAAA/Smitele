@@ -4,6 +4,7 @@ import GodSearch from "../components/GodSearch";
 import God from "../services/Gods";
 import getAchievment from "../services/getAchievment";
 import { getRandomGodIndexDay } from "../services/getRandomGod";
+import Confetti from "../components/Confetti";
 
 interface Props {
   gods: Array<God>;
@@ -38,6 +39,7 @@ function GodPage({ gods }: Props) {
           </div>
         </div>
       </div>
+      <Confetti show={complete} />
     </>
   );
 }
