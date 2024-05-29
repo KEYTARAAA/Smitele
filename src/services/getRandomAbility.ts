@@ -1,7 +1,7 @@
-import God from "./Gods";
+import Ability from "./Ability";
 
-export function getRandomGodIndexDay(
-  arr: Array<God>,
+export function getRandomAbilityIndexDay(
+  arr: Array<Ability>,
   randomFactor: number
 ): number {
   const date: Date = new Date();
@@ -11,6 +11,6 @@ export function getRandomGodIndexDay(
     ) * 10000;
   return Math.floor((x - Math.floor(x)) * arr.length);
 }
-export function getRandomGodIndex(arr: Array<God>): number {
+export function getRandomAbilityIndex(arr: Array<Ability>): number {
   return Math.floor(Math.random() * arr.length);
 }

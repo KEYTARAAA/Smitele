@@ -1,7 +1,7 @@
 import { useState } from "react";
 import God from "../services/Gods";
 import GodGuess from "./GodGuess";
-import "./GodSearch.css";
+import "../styles/GodSearch.css";
 interface Props {
   gods: Array<God>;
   guess: (god: God) => void;

@@ -1,5 +1,5 @@
 import God from "../services/Gods";
-import "./GodRow.css";
+import "../styles/GodRow.css";
 import { MouseEvent, useState } from "react";
 
 interface Props {

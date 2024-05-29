@@ -1,5 +1,5 @@
 import God from "../services/Gods";
-import "./GodGuess.css";
+import "../styles/GodGuess.css";
 
 interface Props {
   god: God;

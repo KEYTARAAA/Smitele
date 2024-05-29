@@ -1,7 +1,16 @@
 import cheerio from "cheerio";
 import God from "./Gods";
 
-const getGodsList = (text: string): Array<God> => {
+const getGodsList = (url: string): Promise<Array<God>> => {
+  return new Promise<Array<God>>((resolve, reject) => {
+    fetch("https://corsproxy.io/?" + encodeURIComponent(url))
+      .then((res) => res.text())
+      .then((res) => resolve(getGodsListFromHTML(res)))
+      .catch((e) => reject(e));
+  });
+};
+
+const getGodsListFromHTML = (text: string): Array<God> => {
   const html = cheerio.load(text);
 
   // Find the specific table by its class or ID
@@ -39,6 +48,7 @@ const getGodsList = (text: string): Array<God> => {
         return god;
       })
       .get();
+
     return godList;
   } else {
     console.log("The specified table does not exist in the HTML.");

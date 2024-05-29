@@ -1,0 +1,41 @@
+
+.ability-container{
+    padding: 3rem 0;
+    display: flex;
+    gap: 2rem;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+.ability-details-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+}
+.ability-details-container h3{
+    margin: 0 0;
+    padding: 0 0;
+}
+.ability-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 128px;
+     height: 128px;
+    border: 5px solid #000000;
+    border-radius: 10%;
+}
+.ability-image{
+    z-index: -1;
+    position: absolute;
+    width: 128px;
+    height: 128px;
+}
+
+.ability-guess-container{
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    gap: 10px;
+}

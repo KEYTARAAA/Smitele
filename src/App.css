@@ -1,17 +1,13 @@
 #root {
-  max-width: 1280px;
   margin: 0 auto;
   text-align: center;
 }
 
-body {
-  margin:0;
-  padding:0;
-}
 
 .container{
   margin: 0;
     padding: 0;
+    align-items: center;
 }
 
 .guesses{
