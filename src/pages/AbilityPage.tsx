@@ -56,7 +56,7 @@ function AbilityPage({ gods }: Props) {
           <img
             className="achievment-image"
             src={`/images/achievments/${getAchievment(
-              complete ? guess.length - 1 : guesses.length
+              complete ? guesses.length - 1 : guesses.length
             )}.png`}
           />
           <p className="achievment-text">
