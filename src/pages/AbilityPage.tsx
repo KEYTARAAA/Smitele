@@ -66,7 +66,7 @@ function AbilityPage({ gods }: Props) {
           <GodSearch gods={gods} guess={guess} complete={complete} />
           <div className="ability-guess-container">
             {guesses.map((guess: God) => (
-              <div className="ability-box">
+              <div className="ability-box" key={guess.name}>
                 <img
                   src={`/images/gods/${guess.name}.png`}
                   className="ability-image"

@@ -1,7 +1,6 @@
 import cheerio, { Element } from "cheerio";
 import God from "./Gods";
 import Ability from "./Ability";
-import AbilityPage from "../pages/AbilityPage";
 
 const getAbilityList = (url: string, god: God): Promise<Array<Ability>> => {
   /*return fetch("https://corsproxy.io/?" + encodeURIComponent(url))
@@ -22,7 +21,7 @@ const getAbilityListFromHTML = (god: God, text: string): Array<Ability> => {
   const h2 = span.closest("h2");
   const table = h2.next("table");
   const tables: string[] = [];
-  table.find("table.wikitable").each((index: number, element: Element) => {
+  table.find("table.wikitable").each((_index: number, element: Element) => {
     tables.push(html(element).html() || "");
   });
   const abilities: Array<Ability> = [];
