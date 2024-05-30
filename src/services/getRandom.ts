@@ -9,6 +9,6 @@ export function getRandomIndexDay(
     ) * 10000;
   return Math.floor((x - Math.floor(x)) * arr.length);
 }
-export function getRandomGodIndex(arr: Array<any>): number {
+export function getRandomIndex(arr: Array<any>): number {
   return Math.floor(Math.random() * arr.length);
 }

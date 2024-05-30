@@ -12,6 +12,9 @@ function HomePage() {
         <a href="/voiceline">
           <button>Voiceline of the Day</button>
         </a>
+        <a href="/joke">
+          <button>Joke of the Day</button>
+        </a>
       </div>
     </>
   );

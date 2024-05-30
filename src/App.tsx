@@ -8,6 +8,7 @@ import getGodsList from "./services/getGodsList";
 import NavBar from "./components/NavBar";
 import HomePage from "./pages/HomePage";
 import VoicelinePage from "./pages/VoicelinePage";
+import JokePage from "./pages/JokePage";
 
 function App() {
   const url = "https://smite.fandom.com/wiki/List_of_gods";
@@ -37,6 +38,7 @@ function App() {
             path="/voiceline"
             element={<VoicelinePage gods={gods} />}
           ></Route>
+          <Route path="/joke" element={<JokePage gods={gods} />}></Route>
         </Routes>
       </BrowserRouter>
     </>
