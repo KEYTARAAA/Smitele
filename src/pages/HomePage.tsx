@@ -15,6 +15,9 @@ function HomePage() {
         <a href="/joke">
           <button>Joke of the Day</button>
         </a>
+        <a href="/laugh">
+          <button>Laugh of the Day</button>
+        </a>
       </div>
     </>
   );

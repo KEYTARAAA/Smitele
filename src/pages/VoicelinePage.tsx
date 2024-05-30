@@ -39,7 +39,7 @@ function VoicelinePage({ gods }: Props) {
     <>
       <audio ref={audioRef} src={voiceline?.voiceline} />
       <button
-        className="audio-button"
+        className="voiceline-audio-button"
         onClick={() => audioRef.current?.play()}
       />
       <div className="container">

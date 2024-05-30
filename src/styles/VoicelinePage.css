@@ -1,6 +1,6 @@
-.audio-button{
+.voiceline-audio-button{
     height: 128px;
     width: 128px;
-    background-image: url('/images/icons/Music_K-Pop.png');
+    background-image: url('/images/icons/Music_Voiceline.png');
     margin: 1rem;
 }

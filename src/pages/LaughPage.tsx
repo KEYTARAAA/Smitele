@@ -1,17 +1,17 @@
 import { useEffect, useRef, useState } from "react";
-import "../styles/JokePage.css";
+import "../styles/LaughPage.css";
 import God from "../services/Gods";
 import Voiceline from "../services/Voiceline";
 import { getRandomIndexDay } from "../services/getRandom";
 import Confetti from "../components/Confetti";
 import GodSearch from "../components/GodSearch";
 import getAchievment from "../services/getAchievment";
-import getJokeList from "../services/getJokeList";
+import getLaughList from "../services/getLaughList";
 
 interface Props {
   gods: Array<God>;
 }
-function JokePage({ gods }: Props) {
+function LaughPage({ gods }: Props) {
   const [godIndex, setGodIndex] = useState(0);
   const [voiceline, setVoiceline] = useState<Voiceline>();
   const audioRef = useRef<HTMLAudioElement>(null);
@@ -26,7 +26,7 @@ function JokePage({ gods }: Props) {
   useEffect(() => {
     const index = getRandomIndexDay(gods, 4);
     setGodIndex(index);
-    getJokeList(
+    getLaughList(
       `https://smite.fandom.com/wiki/${gods[index].name
         .split(" ")
         .join("_")}_voicelines`,
@@ -39,7 +39,7 @@ function JokePage({ gods }: Props) {
     <>
       <audio ref={audioRef} src={voiceline?.voiceline} />
       <button
-        className="joke-audio-button"
+        className="laugh-audio-button"
         onClick={() => audioRef.current?.play()}
       />
       <div className="container">
@@ -72,4 +72,4 @@ function JokePage({ gods }: Props) {
     </>
   );
 }
-export default JokePage;
+export default LaughPage;

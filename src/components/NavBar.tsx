@@ -21,6 +21,9 @@ function NavBar() {
         <li className={page == "joke" ? "active" : ""}>
           <a href="/joke">Joke</a>
         </li>
+        <li className={page == "laugh" ? "active" : ""}>
+          <a href="/laugh">Laugh</a>
+        </li>
       </ul>
     </nav>
   );
