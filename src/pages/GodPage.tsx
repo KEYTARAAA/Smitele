@@ -3,7 +3,7 @@ import GodRow from "../components/GodRow";
 import GodSearch from "../components/GodSearch";
 import God from "../services/Gods";
 import getAchievment from "../services/getAchievment";
-import { getRandomGodIndexDay } from "../services/getRandomGod";
+import { getRandomIndexDay } from "../services/getRandom";
 import Confetti from "../components/Confetti";
 
 interface Props {
@@ -19,7 +19,7 @@ function GodPage({ gods }: Props) {
     setComplete(god.name === gods[godIndex].name);
   };
 
-  useEffect(() => setGodIndex(getRandomGodIndexDay(gods, 1)), []);
+  useEffect(() => setGodIndex(getRandomIndexDay(gods, 1)), []);
   return (
     <>
       <div className="container">

@@ -1,19 +1,20 @@
-import { useEffect, useState } from "react";
-import "../styles/AbilityPage.css";
-import getAbilityList from "../services/getGodAbilityList";
+import { useEffect, useRef, useState } from "react";
+import "../styles/VoicelinePage.css";
 import God from "../services/Gods";
-import Ability from "../services/Ability";
+import Voiceline from "../services/Voiceline";
+import getVoicelineList from "../services/getVoicelineList";
 import { getRandomIndexDay } from "../services/getRandom";
+import Confetti from "../components/Confetti";
 import GodSearch from "../components/GodSearch";
 import getAchievment from "../services/getAchievment";
-import Confetti from "../components/Confetti";
 
 interface Props {
   gods: Array<God>;
 }
-function AbilityPage({ gods }: Props) {
+function VoicelinePage({ gods }: Props) {
   const [godIndex, setGodIndex] = useState(0);
-  const [ability, setAbility] = useState<Ability>();
+  const [voiceline, setVoiceline] = useState<Voiceline>();
+  const audioRef = useRef<HTMLAudioElement>(null);
   const [guesses, setGuesses] = useState<Array<God>>([]);
   const [complete, setComplete] = useState<boolean>(false);
 
@@ -23,34 +24,25 @@ function AbilityPage({ gods }: Props) {
   };
 
   useEffect(() => {
-    const index = getRandomIndexDay(gods, 2);
+    const index = getRandomIndexDay(gods, 3);
     setGodIndex(index);
-    getAbilityList(
-      `https://smite.fandom.com/wiki/${gods[index].name.split(" ").join("_")}`,
+    getVoicelineList(
+      `https://smite.fandom.com/wiki/${gods[index].name
+        .split(" ")
+        .join("_")}_voicelines`,
       gods[index]
     ).then((res) => {
-      setAbility(res[getRandomIndexDay(res, 2)]);
+      setVoiceline(res[getRandomIndexDay(res, 3)]);
     });
   }, []);
   return (
     <>
+      <audio ref={audioRef} src={voiceline?.voiceline} />
+      <button
+        className="audio-button"
+        onClick={() => audioRef.current?.play()}
+      />
       <div className="container">
-        <div className="ability-container">
-          <div className="ability-box">
-            <img src={ability?.image || ""} className="ability-image" />
-          </div>
-          <div className="ability-details-container">
-            {(complete ? guess.length - 1 : guesses.length) < 2 || (
-              <h3>{ability?.abilityPosition}</h3>
-            )}
-            {(complete ? guess.length - 1 : guesses.length) < 4 || (
-              <h3>{ability?.abilityType}</h3>
-            )}
-            {(complete ? guess.length - 1 : guesses.length) < 5 || (
-              <h3>{ability?.name}</h3>
-            )}
-          </div>
-        </div>
         <div className="achievmentContainer">
           <img
             className="achievment-image"
@@ -80,4 +72,4 @@ function AbilityPage({ gods }: Props) {
     </>
   );
 }
-export default AbilityPage;
+export default VoicelinePage;

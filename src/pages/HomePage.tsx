@@ -9,6 +9,9 @@ function HomePage() {
         <a href="/ability">
           <button>Ability of the Day</button>
         </a>
+        <a href="/voiceline">
+          <button>Voiceline of the Day</button>
+        </a>
       </div>
     </>
   );

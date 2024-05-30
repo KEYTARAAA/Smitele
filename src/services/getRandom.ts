@@ -1,7 +1,5 @@
-import Ability from "./Ability";
-
-export function getRandomAbilityIndexDay(
-  arr: Array<Ability>,
+export function getRandomIndexDay(
+  arr: Array<any>,
   randomFactor: number
 ): number {
   const date: Date = new Date();
@@ -11,6 +9,6 @@ export function getRandomAbilityIndexDay(
     ) * 10000;
   return Math.floor((x - Math.floor(x)) * arr.length);
 }
-export function getRandomAbilityIndex(arr: Array<Ability>): number {
+export function getRandomGodIndex(arr: Array<any>): number {
   return Math.floor(Math.random() * arr.length);
 }

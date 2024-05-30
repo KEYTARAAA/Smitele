@@ -15,6 +15,9 @@ function NavBar() {
         <li className={page == "ability" ? "active" : ""}>
           <a href="/ability">Ability</a>
         </li>
+        <li className={page == "voiceline" ? "active" : ""}>
+          <a href="/voiceline">Voiceline</a>
+        </li>
       </ul>
     </nav>
   );
