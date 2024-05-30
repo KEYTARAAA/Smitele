@@ -24,7 +24,6 @@ const getLaughListFromHTML = (god: God, text: string): Array<Voiceline> => {
     jk = jk.substring(0, jk.indexOf(".ogg") + 4);
     laughs.push({ god: god, voiceline: jk });
   });
-  laughs = laughs.slice(1);
   return laughs;
 };
 export default getLaughList;
