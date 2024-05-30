@@ -32,7 +32,7 @@ function JokePage({ gods }: Props) {
         .join("_")}_voicelines`,
       gods[index]
     ).then((res) => {
-      setVoiceline(res[getRandomIndexDay(res, 3)]);
+      setVoiceline(res[getRandomIndexDay(res, 4)]);
     });
   }, []);
   return (

@@ -24,7 +24,7 @@ function LaughPage({ gods }: Props) {
   };
 
   useEffect(() => {
-    const index = getRandomIndexDay(gods, 4);
+    const index = getRandomIndexDay(gods, 5);
     setGodIndex(index);
     getLaughList(
       `https://smite.fandom.com/wiki/${gods[index].name
@@ -32,7 +32,7 @@ function LaughPage({ gods }: Props) {
         .join("_")}_voicelines`,
       gods[index]
     ).then((res) => {
-      setVoiceline(res[getRandomIndexDay(res, 3)]);
+      setVoiceline(res[getRandomIndexDay(res, 5)]);
     });
   }, []);
   return (
